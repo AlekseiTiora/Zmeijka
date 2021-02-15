@@ -11,29 +11,56 @@ namespace Zmeijka
         static void Main(string[] args)
         {
             Point p1 = new Point(1,3, '*');
-            //p1.x = 1;
-            //p1.y = 3;
-            //p1.sym = '*';
+
             p1.Draw();
 
 
             Point p2 = new Point(4, 5 , '#');
-            //p2.x = 4;
-            //p2.y = 5;
-            //p2.sym = '#';
+
             p2.Draw();
 
-            //int x1 = 1;
-            //int y1 = 3;
-            //char sym1 = '*';
+            Point p3 = new Point(6, 2, '$');
 
+            p3.Draw();
 
+            Point p4 = new Point(2, 7, '!');
 
-            //int x2 = 4;
-            //int y2 = 5;
-            //char sym2 = '#';
+            p4.Draw();
 
-            //Draw(x2, y2, sym2);
+            Point p5 = new Point(5, 1, '/');
+
+            p5.Draw();
+
+            Point p6 = new Point(3, 9, '[');
+
+            p6.Draw();
+
+            HorizontallLine line = new HorizontallLine(5,10,8,'+');
+            line.Drow();
+
+            List<int> numList = new List<int>();
+            numList.Add(0);
+            numList.Add(1);
+            numList.Add(2);
+
+            int x = numList[0];
+            int y = numList[1];
+            int z = numList[2];
+
+            foreach (int i in numList)
+
+            {
+                Console.WriteLine(i);
+            }
+            numList.RemoveAt(0);
+            List<Point> pList = new List<Point>();
+            pList.Add(p1);
+            pList.Add(p2);
+            pList.Add(p3);
+            pList.Add(p4);
+            pList.Add(p5);
+            pList.Add(p6);
+
 
             Console.ReadLine();
         }
