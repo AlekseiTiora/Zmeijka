@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Zmeijka
 {
-    class HorizontallLine : Figure
+    class HorizontalLine : Figure
     {
 
-        public HorizontallLine(int xleft, int xright,int y, char sym)
+        public HorizontalLine(int xleft, int xright,int y, char sym)
         {
             pList = new List<Point>();
             for (int x = xleft; x <= xright; x++)
