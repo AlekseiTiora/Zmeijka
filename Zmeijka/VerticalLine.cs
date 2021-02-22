@@ -13,7 +13,7 @@ namespace Zmeijka
             pList = new List<Point>();
             for (int y = yUp; y <= xDown; y++)
             {
-                Point p = new Point(x, y, sym);
+                Point p = new Point(x, y, sym,ConsoleColor.White);
                 pList.Add(p);
                
             }

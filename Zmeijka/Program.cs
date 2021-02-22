@@ -10,19 +10,22 @@ namespace Zmeijka
 	{
 		static void Main(string[] args)
 		{
-			Console.SetWindowSize(80, 25);
+			Console.SetWindowSize(115, 35);
 
-			Walls walls = new Walls(80, 25);
+			Walls walls = new Walls(100, 30);
 			walls.Draw();
 
 			// Отрисовка точек			
-			Point p = new Point(4, 5, '*');
+			Point p = new Point(4, 5, '*',ConsoleColor.Green);
 			Snake snake = new Snake(p, 4, Direction.RIGHT);
 			snake.Draw();
 
-			FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+			FoodCreator foodCreator = new FoodCreator(100, 30, '¤', ConsoleColor.Green);
 			Point food = foodCreator.CreateFood();
 			food.Draw();
+
+			Score score = new Score(0,1);
+			score.ScoreWrite();
 
 			while (true)
 			{
@@ -34,13 +37,20 @@ namespace Zmeijka
 				{
 					food = foodCreator.CreateFood();
 					food.Draw();
+					score.ScoreUp();
+					score.ScoreWrite();
+					if (score.ScoreUp())
+                    {
+						score.speed -= 10;
+                    }
+
 				}
 				else
 				{
 					snake.Move();
 				}
 
-				Thread.Sleep(100);
+				Thread.Sleep(score.speed);
 				if (Console.KeyAvailable)
 				{
 					ConsoleKeyInfo key = Console.ReadKey();
@@ -61,7 +71,7 @@ namespace Zmeijka
 			WriteText("============================", xOffset, yOffset++);
 			WriteText("        GAME OVER", xOffset + 1, yOffset++);
 			yOffset++;
-			WriteText(" Автор: Aleksei Tiora", xOffset + 2, yOffset++);
+			WriteText(" Autor: Aleksei Tiora", xOffset + 2, yOffset++);
 			WriteText("", xOffset + 1, yOffset++);
 			WriteText("============================", xOffset, yOffset++);
 		}
