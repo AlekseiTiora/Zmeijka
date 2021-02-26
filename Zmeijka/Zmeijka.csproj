@@ -48,6 +48,8 @@
     <Compile Include="FoodCreator.cs" />
     <Compile Include="Score.cs" />
     <Compile Include="Snake.cs" />
+    <Compile Include="Sounds.cs" />
+    <Compile Include="Start.cs" />
     <Compile Include="VerticalLine.cs" />
     <Compile Include="HorizontalLine.cs" />
     <Compile Include="Point.cs" />

@@ -24,7 +24,7 @@ namespace Zmeijka
 			Point food = foodCreator.CreateFood();
 			food.Draw();
 
-			Score score = new Score(0,1);
+			Score score = new Score(0,1,50);
 			score.ScoreWrite();
 
 			while (true)
@@ -41,16 +41,17 @@ namespace Zmeijka
 					score.ScoreWrite();
 					if (score.ScoreUp())
                     {
-						score.speed -= 10;
+						score.Speed -= 10;
                     }
 
+		
 				}
 				else
 				{
 					snake.Move();
 				}
 
-				Thread.Sleep(score.speed);
+				Thread.Sleep(score.Speed);
 				if (Console.KeyAvailable)
 				{
 					ConsoleKeyInfo key = Console.ReadKey();
@@ -81,6 +82,5 @@ namespace Zmeijka
 			Console.SetCursorPosition(xOffset, yOffset);
 			Console.WriteLine(text);
 		}
-
 	}
 }

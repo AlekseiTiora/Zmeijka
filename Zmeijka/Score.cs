@@ -11,10 +11,11 @@ namespace Zmeijka
         private int score;
         public int level;
         public int Speed;
-        public Score(int score, int level)
+        public Score(int score, int level, int Speed)
         {
             this.score = score;
             this.level = level;
+            this.Speed = Speed;
         }
         public bool ScoreUp()
         {
@@ -26,7 +27,14 @@ namespace Zmeijka
             }
             else { return false; }
         }
+        public void ScoreWrite()
+        {
+            Console.SetCursorPosition(105, 10);
+            Console.WriteLine("Score:" + score.ToString());
+            Console.SetCursorPosition(105, 11);
+            Console.WriteLine("Level:" + level.ToString());
 
+        }
     }
 }
 

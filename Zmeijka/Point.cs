@@ -52,6 +52,10 @@ namespace Zmeijka
 			{
 				y = y + offset;
 			}
+			else if (direction == Direction.PAUS)
+            {
+				x += 0;
+            }
 		}
 
 		public bool IsHit(Point p)

@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace Zmeijka
 {
-    enum Direction
+    class Sounds
     {
-        LEFT,
-        RIGHT,
-        UP,
-        DOWN,
-        PAUS
+        System.Windows.Media.MediaPlayer player = new
+            System.Windows.MediaPlayer();
     }
 }
